@@ -7,6 +7,7 @@ from matplotlib.animation import FuncAnimation
 from deep_pose_models import SimplePoseModel
 from super_gradients.training import models
 from super_gradients.common.object_names import Models
+from constants import YOLO_pose_dict as pose_dict
 
 # def update(i):
 #     ret, frame = cap.read()
@@ -18,19 +19,7 @@ from super_gradients.common.object_names import Models
 #             ax.clear()
 #             ax.imshow(annotated_image)
 #             ax.axis('off')  # Hide the axis
-pose_dict = {
-    "RIGHT_SHOULDER":6,
-    "LEFT_SHOULDER":5,
-    "RIGHT_ELBOW":8,
-    "LEFT_ELBOW":7,
-    "RIGHT_WRIST":10,
-    "LEFT_WRIST":9,
-    "RIGHT_EAR":4,
-    "LEFT_EAR":3,
-    "RIGHT_EYE":2,
-    "LEFT_EYE":1,
-    "NOSE":0
-}
+
 def calculate_angle(a,b,c):
     a = np.array(a) # First
     b = np.array(b) # Mid
